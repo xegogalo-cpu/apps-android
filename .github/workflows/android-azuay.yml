@@ -174,7 +174,7 @@ jobs:
               protected TwaLauncher createTwaLauncher() {
                   if (chromeDisponible()) {
                       return new TwaLauncher(this, CHROME, SessionStore.makeSessionId(getTaskId()),
-                              new SharedPreferencesTokenStore(this), null);
+                              new SharedPreferencesTokenStore(this), getMetadata().launchingBrowserToken);
                   }
                   return super.createTwaLauncher();
               }
